@@ -9,6 +9,8 @@ module ModuleNafn {
     requires javafx.fxml;
     requires javafx.controls;
     requires jdk.xml.dom;
+    requires java.net.http;
+    requires com.google.gson;
     opens is.vidmot to javafx.fxml;
 
     exports is.vidmot;
