@@ -4,6 +4,7 @@ import javafx.beans.property.Property;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
@@ -23,7 +24,7 @@ public class KvikmyndakistanSpjald extends GridPane {
     private TextField fxHeiti;
 
     @FXML
-    private TextField fxDagsetning;
+    private TextArea fxUmsogn;
 
     @FXML
     private TextField fxAfangastadur;
@@ -50,12 +51,12 @@ public class KvikmyndakistanSpjald extends GridPane {
         return fxHeiti.textProperty();
     }
 
-    public Property<String> afangastadurProperty() {
-        return fxAfangastadur.textProperty();
+    public Property<String> umsognProperty() {
+        return fxUmsogn.textProperty();
     }
 
     public Property<String> dagsetningProperty() {
-        return fxDagsetning.textProperty();
+        return fxAfangastadur.textProperty();
     }
 
 }

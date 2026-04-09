@@ -37,7 +37,7 @@ public class KvikmyndakistanApp extends javafx.application.Application {
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
          +*/
         // Setja titilinn á gluggann
-        stage.setTitle("Ferðaplan");
+        stage.setTitle("Kvikmyndakistan");
         // Tengja senuna við glugggann
         stage.setScene(s);
         // Birta gluggann
