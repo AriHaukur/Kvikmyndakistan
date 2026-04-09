@@ -8,7 +8,7 @@
 Notendaviðmót fyrir grunn
 -->
 
-<VBox alignment="CENTER" prefHeight="148.0" prefWidth="325.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.vidmot.controller.FerdController">
+<VBox alignment="CENTER" prefHeight="148.0" prefWidth="325.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.vidmot.controller.KvikmyndakistanController">
     <FerdSpjald fx:id="fxFerdSpjald" />
       <Button mnemonicParsing="false" onAction="#onTilBaka" prefHeight="25.0" prefWidth="302.0" text="Til baka" textAlignment="CENTER" />
 </VBox>

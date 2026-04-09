@@ -111,7 +111,7 @@ public class AdalController {
      */
     @FXML
     private void onBaetaVid(ActionEvent event) {
-        Optional<Ferd> result = FerdDialogWrapper.birtaDialog(fxSkilabod.getScene().getWindow());
+        Optional<Ferd> result = KvikmyndakistanDialogWrapper.birtaDialog(fxSkilabod.getScene().getWindow());
         if (!result.isEmpty()) {
             ferdaplan.nyFerd(result.get());
         }

@@ -2,8 +2,6 @@ package is.vidmot.controller;
 
 import is.vidmot.view.FerdSpjald;
 import is.vinnsla.Ferd;
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.Property;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 
@@ -15,7 +13,7 @@ import javafx.fxml.FXML;
  *
  *
  *****************************************************************************/
-public class FerdDialogController implements GognInterface<Ferd>{
+public class KvikmyndakistanDialogController implements GognInterface<Ferd>{
     @FXML
     private FerdSpjald fxFerdSpjald; // viðmótshlutur, custsom component
 

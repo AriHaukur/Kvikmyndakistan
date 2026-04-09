@@ -4,12 +4,8 @@ import is.vidmot.switcher.View;
 import is.vidmot.switcher.ViewSwitcher;
 import is.vidmot.view.FerdSpjald;
 import is.vinnsla.Ferd;
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
 
 /******************************************************************************
  *  Nafn    : Ebba Þóra Hvannberg
@@ -19,7 +15,7 @@ import javafx.scene.control.TextField;
  *
  *
  *****************************************************************************/
-public class FerdController implements GognInterface<Ferd> {
+public class KvikmyndakistanController implements GognInterface<Ferd> {
 
     @FXML
     private FerdSpjald fxFerdSpjald;

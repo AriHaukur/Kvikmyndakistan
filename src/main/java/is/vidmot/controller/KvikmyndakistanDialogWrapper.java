@@ -22,7 +22,7 @@ import java.util.Optional;
  *
  *
  *****************************************************************************/
-public class FerdDialogWrapper {
+public class KvikmyndakistanDialogWrapper {
 
     private static final String NY_FERD = "Ný ferð";
     /**
@@ -33,10 +33,10 @@ public class FerdDialogWrapper {
     public static Optional<Ferd> birtaDialog(Window owner)  {
         try {
             FXMLLoader loader = new FXMLLoader(
-                    FerdDialogWrapper.class.getResource(View.FERDDIALOG.getFileName()));
+                    KvikmyndakistanDialogWrapper.class.getResource(View.FERDDIALOG.getFileName()));
 
             DialogPane pane = loader.load();
-            FerdDialogController controller = loader.getController();
+            KvikmyndakistanDialogController controller = loader.getController();
             controller.setGogn (new Ferd());
             Dialog<Ferd> dialog = new Dialog<>();
             dialog.setTitle(NY_FERD);

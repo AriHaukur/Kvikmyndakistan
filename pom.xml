@@ -56,7 +56,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>ModuleNafn/is.vidmot.FerdaplanApp</mainClass>
+                            <mainClass>ModuleNafn/is.vidmot.KvikmyndakistanApp</mainClass>
                             <options>
                                 <option>--enable-native-access=javafx.graphics</option>
                             </options>
@@ -70,7 +70,7 @@
                                     -agentlib:jdwp=transport=dt_socket,server=y,address=localhost:5005,suspend=y
                                 </option>
                             </options>
-                            <mainClass>ModuleNafn/is.vidmot.FerdaplanApp</mainClass>
+                            <mainClass>ModuleNafn/is.vidmot.KvikmyndakistanApp</mainClass>
                         </configuration>
                     </execution>
                 </executions>

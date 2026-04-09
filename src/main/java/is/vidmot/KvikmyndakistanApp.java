@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  *
  *
  *****************************************************************************/
-public class FerdaplanApp extends javafx.application.Application {
+public class KvikmyndakistanApp extends javafx.application.Application {
     /**
      * Ræsir appið
      *
