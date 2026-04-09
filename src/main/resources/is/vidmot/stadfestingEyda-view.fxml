@@ -14,7 +14,7 @@
     </buttonTypes>
     <content>
         <VBox spacing="10">
-            <Label text="Viltu eyða þessari ferð" />
+            <Label text="Viltu eyða þessari mynd" />
             <TextField fx:id="fxHeiti"/>
         </VBox>
     </content>

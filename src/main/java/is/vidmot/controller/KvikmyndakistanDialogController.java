@@ -27,8 +27,8 @@ public class KvikmyndakistanDialogController implements GognInterface<Mynd>{
     public void setGogn(Mynd f) {
         this.ferd.set(f);
         fxKvikmyndakistanSpjald.heitiProperty().bindBidirectional (ferd.get().heitiProperty());
-        fxKvikmyndakistanSpjald.afangastadurProperty().bindBidirectional (ferd.get().afangastadurProperty());
-        fxKvikmyndakistanSpjald.dagsetningProperty().bindBidirectional((ferd.get().dagsetningProperty()));
+        fxKvikmyndakistanSpjald.umsognProperty().bindBidirectional (ferd.get().afangastadurProperty());
+        fxKvikmyndakistanSpjald.dagsetningProperty().bindBidirectional(ferd.get().dagsetningProperty());
     }
 
 

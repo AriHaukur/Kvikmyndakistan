@@ -27,8 +27,8 @@ public class KvikmyndakistanController implements GognInterface<Mynd> {
      */
     public void setGogn(Mynd f) {
         fxKvikmyndakistanSpjald.heitiProperty().bind(f.heitiProperty());
-        fxKvikmyndakistanSpjald.afangastadurProperty().bind(f.afangastadurProperty());
-        fxKvikmyndakistanSpjald.dagsetningProperty().bind((f.dagsetningProperty()));
+        fxKvikmyndakistanSpjald.umsognProperty().bind(f.afangastadurProperty());
+        fxKvikmyndakistanSpjald.dagsetningProperty().bind(f.dagsetningProperty());
     }
 
     /**

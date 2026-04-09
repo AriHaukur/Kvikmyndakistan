@@ -26,12 +26,12 @@ import java.util.Optional;
  *****************************************************************************/
 public class AdalController {
 
-    private static final String FERD_BAETT_VID = "Ferð %s bætt við ";
-    private static final String FERD_EYTT = "Ferð %s eytt";
-    private static final String FERD_SKODUD = "Ferð %s skoðuð";
-    private static final String ENGIN_FERD_VALIN = "Veldu ferð til að skoða eða eyða";
-    private static final String FERD_VALIN = "Ferð %s valin";
-    public static final String SKRA_FANNST_EKKI = "Skrá fannst ekki ";
+    private static final String FERD_BAETT_VID = "Mynd %s bætt við ";
+    private static final String FERD_EYTT = "Mynd %s eytt";
+    private static final String FERD_SKODUD = "Mynd %s skoðuð";
+    private static final String ENGIN_FERD_VALIN = "Veldu mynd til að skoða eða eyða";
+    private static final String FERD_VALIN = " %s valin";
+    public static final String SKRA_FANNST_EKKI = "Mynd finnst ekki ";
     public static final String FERDIR_TXT = "/mynd.txt";
 
     @FXML
