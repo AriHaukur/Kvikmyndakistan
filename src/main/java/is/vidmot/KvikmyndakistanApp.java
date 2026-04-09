@@ -30,7 +30,7 @@ public class KvikmyndakistanApp extends javafx.application.Application {
 
         ViewSwitcher.switchTo (View.ADAL, true, null);
         /**
-        // Smíða loader fyrir notendaviðmótið sem er geymt í skránni ferd-view.fxml
+        // Smíða loader fyrir notendaviðmótið sem er geymt í skránni kvikmyndakistan-view.fxml
         // Gætið þess að .fxml skráin sé undir resources/is/vidmot
            FXMLLoader fxmlLoader = new FXMLLoader(FerdaplanApp.class.getResource("adal-view.fxml"));
         // Smíða senuna með notendaviðmótinu sem er núna lesið inn af resources

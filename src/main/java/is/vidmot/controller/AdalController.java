@@ -3,8 +3,8 @@ package is.vidmot.controller;
 import is.vidmot.switcher.View;
 import is.vidmot.switcher.ViewSwitcher;
 import is.vinnsla.Atburdur;
-import is.vinnsla.Ferd;
-import is.vinnsla.Ferdaplan;
+import is.vinnsla.Mynd;
+import is.vinnsla.Kvikmyndakistan;
 import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,10 +32,10 @@ public class AdalController {
     private static final String ENGIN_FERD_VALIN = "Veldu ferð til að skoða eða eyða";
     private static final String FERD_VALIN = "Ferð %s valin";
     public static final String SKRA_FANNST_EKKI = "Skrá fannst ekki ";
-    public static final String FERDIR_TXT = "/ferdir.txt";
+    public static final String FERDIR_TXT = "/mynd.txt";
 
     @FXML
-    private ListView<Ferd> fxListiFerdir;
+    private ListView<Mynd> fxListiFerdir;
 
     @FXML
     private Button fxEyda;
@@ -47,7 +47,7 @@ public class AdalController {
     private Label fxSkilabod;
 
     // vinnslan
-    private Ferdaplan ferdaplan = new Ferdaplan();
+    private Kvikmyndakistan kvikmyndakistan = new Kvikmyndakistan();
 
     /**
      * Frumstillingaraðferð sem er keyrð eftir að búið er að hlaða inn .fxml skránni en áður
@@ -55,12 +55,12 @@ public class AdalController {
      */
     public void initialize() {
         try {
-            ferdaplan.lesaLista(FERDIR_TXT);
+            kvikmyndakistan.lesaLista(FERDIR_TXT);
 
         } catch (FileNotFoundException e) {
             fxSkilabod.setText(SKRA_FANNST_EKKI);
         }
-        fxListiFerdir.setItems(ferdaplan.getFerdaListi());
+        fxListiFerdir.setItems(kvikmyndakistan.getFerdaListi());
         tengjaSkodaEydaHnappa();
         tengjaAtburdVidSkilabod();
         tengjaValinFerd();
@@ -71,7 +71,7 @@ public class AdalController {
      */
     private void tengjaValinFerd() {
         fxListiFerdir.getSelectionModel().selectedItemProperty().addListener((obs, gamla, nyja)
-                -> ferdaplan.veljaFerd(nyja));
+                -> kvikmyndakistan.veljaFerd(nyja));
     }
 
     /**
@@ -90,18 +90,18 @@ public class AdalController {
     private void tengjaAtburdVidSkilabod() {
         fxSkilabod.textProperty().bind(Bindings.createStringBinding(() -> // callable lambda fall
                 {
-                    if (ferdaplan.valinFerdProperty().get() == null) {
+                    if (kvikmyndakistan.valinFerdProperty().get() == null) {
                         return String.format(ENGIN_FERD_VALIN);
                     }
-                    return switch (ferdaplan.sidastiAtburdurProperty().get()) {
-                        case Atburdur.NY_FERD -> String.format(FERD_BAETT_VID, ferdaplan.valinFerdProperty().get());
-                        case Atburdur.EYDA -> String.format(FERD_EYTT, ferdaplan.valinFerdProperty().get());
-                        case Atburdur.SKODA -> String.format(FERD_SKODUD, ferdaplan.valinFerdProperty().get());
-                        case Atburdur.VELJA -> String.format(FERD_VALIN, ferdaplan.valinFerdProperty().get());
+                    return switch (kvikmyndakistan.sidastiAtburdurProperty().get()) {
+                        case Atburdur.NY_FERD -> String.format(FERD_BAETT_VID, kvikmyndakistan.valinFerdProperty().get());
+                        case Atburdur.EYDA -> String.format(FERD_EYTT, kvikmyndakistan.valinFerdProperty().get());
+                        case Atburdur.SKODA -> String.format(FERD_SKODUD, kvikmyndakistan.valinFerdProperty().get());
+                        case Atburdur.VELJA -> String.format(FERD_VALIN, kvikmyndakistan.valinFerdProperty().get());
                     };
                 }
-                , ferdaplan.sidastiAtburdurProperty()
-                , ferdaplan.valinFerdProperty())); // vaktaðar breytur
+                , kvikmyndakistan.sidastiAtburdurProperty()
+                , kvikmyndakistan.valinFerdProperty())); // vaktaðar breytur
     }
 
     /**
@@ -111,9 +111,9 @@ public class AdalController {
      */
     @FXML
     private void onBaetaVid(ActionEvent event) {
-        Optional<Ferd> result = KvikmyndakistanDialogWrapper.birtaDialog(fxSkilabod.getScene().getWindow());
+        Optional<Mynd> result = KvikmyndakistanDialogWrapper.birtaDialog(fxSkilabod.getScene().getWindow());
         if (!result.isEmpty()) {
-            ferdaplan.nyFerd(result.get());
+            kvikmyndakistan.nyFerd(result.get());
         }
     }
 
@@ -125,11 +125,11 @@ public class AdalController {
      */
     @FXML
     private void onEyda(ActionEvent event) throws IOException {
-        Ferd f = fxListiFerdir.getSelectionModel().getSelectedItem();
+        Mynd f = fxListiFerdir.getSelectionModel().getSelectedItem();
         if (f != null) {
             StadfestingEydaDialogController s = new StadfestingEydaDialogController();
             if (s.birta(f)) {
-                ferdaplan.eydaFerd(f);
+                kvikmyndakistan.eydaFerd(f);
             }
         }
     }
@@ -141,8 +141,8 @@ public class AdalController {
      */
     @FXML
     private void onSkoda(ActionEvent event) {
-        Ferd f = fxListiFerdir.getSelectionModel().getSelectedItem();
-        ferdaplan.skodaFerd(f);
+        Mynd f = fxListiFerdir.getSelectionModel().getSelectedItem();
+        kvikmyndakistan.skodaFerd(f);
         if (f != null) {
             ViewSwitcher.switchTo(View.FERD, false, f);
         }

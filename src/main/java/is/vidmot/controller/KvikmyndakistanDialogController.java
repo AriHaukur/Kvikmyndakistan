@@ -1,7 +1,7 @@
 package is.vidmot.controller;
 
-import is.vidmot.view.FerdSpjald;
-import is.vinnsla.Ferd;
+import is.vidmot.view.KvikmyndakistanSpjald;
+import is.vinnsla.Mynd;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 
@@ -13,26 +13,26 @@ import javafx.fxml.FXML;
  *
  *
  *****************************************************************************/
-public class KvikmyndakistanDialogController implements GognInterface<Ferd>{
+public class KvikmyndakistanDialogController implements GognInterface<Mynd>{
     @FXML
-    private FerdSpjald fxFerdSpjald; // viðmótshlutur, custsom component
+    private KvikmyndakistanSpjald fxKvikmyndakistanSpjald; // viðmótshlutur, custsom component
 
-    private final SimpleObjectProperty<Ferd> ferd = new SimpleObjectProperty<>(); // módelið
+    private final SimpleObjectProperty<Mynd> ferd = new SimpleObjectProperty<>(); // módelið
 
     /**
      * Útfærir aðferðina úr GognInterface. Setur ferðina og bindur viðmótshluti við módel hlutinn ferd.
      * @param f ferðin
      */
     @Override
-    public void setGogn(Ferd f) {
+    public void setGogn(Mynd f) {
         this.ferd.set(f);
-        fxFerdSpjald.heitiProperty().bindBidirectional (ferd.get().heitiProperty());
-        fxFerdSpjald.afangastadurProperty().bindBidirectional (ferd.get().afangastadurProperty());
-        fxFerdSpjald.dagsetningProperty().bindBidirectional((ferd.get().dagsetningProperty()));
+        fxKvikmyndakistanSpjald.heitiProperty().bindBidirectional (ferd.get().heitiProperty());
+        fxKvikmyndakistanSpjald.afangastadurProperty().bindBidirectional (ferd.get().afangastadurProperty());
+        fxKvikmyndakistanSpjald.dagsetningProperty().bindBidirectional((ferd.get().dagsetningProperty()));
     }
 
 
-    public SimpleObjectProperty<Ferd> getFerd() {
+    public SimpleObjectProperty<Mynd> getFerd() {
         return ferd;
     }
 

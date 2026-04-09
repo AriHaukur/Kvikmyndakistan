@@ -2,8 +2,8 @@ package is.vidmot.controller;
 
 import is.vidmot.switcher.View;
 import is.vidmot.switcher.ViewSwitcher;
-import is.vidmot.view.FerdSpjald;
-import is.vinnsla.Ferd;
+import is.vidmot.view.KvikmyndakistanSpjald;
+import is.vinnsla.Mynd;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
@@ -15,20 +15,20 @@ import javafx.fxml.FXML;
  *
  *
  *****************************************************************************/
-public class KvikmyndakistanController implements GognInterface<Ferd> {
+public class KvikmyndakistanController implements GognInterface<Mynd> {
 
     @FXML
-    private FerdSpjald fxFerdSpjald;
+    private KvikmyndakistanSpjald fxKvikmyndakistanSpjald;
 
     /**
      * Útfærir aðferðina og tengir vinnsluhlut f við viðmótshlut fxFerdSpjald
      *
      * @param f ferðin í vinnslumódelinu
      */
-    public void setGogn(Ferd f) {
-        fxFerdSpjald.heitiProperty().bind(f.heitiProperty());
-        fxFerdSpjald.afangastadurProperty().bind(f.afangastadurProperty());
-        fxFerdSpjald.dagsetningProperty().bind((f.dagsetningProperty()));
+    public void setGogn(Mynd f) {
+        fxKvikmyndakistanSpjald.heitiProperty().bind(f.heitiProperty());
+        fxKvikmyndakistanSpjald.afangastadurProperty().bind(f.afangastadurProperty());
+        fxKvikmyndakistanSpjald.dagsetningProperty().bind((f.dagsetningProperty()));
     }
 
     /**

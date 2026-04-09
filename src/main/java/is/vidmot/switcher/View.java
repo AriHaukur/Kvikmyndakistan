@@ -7,9 +7,9 @@ package is.vidmot.switcher;
  */
 public enum View {
     ADAL("/is/vidmot/adal-view.fxml"),
-    FERD("/is/vidmot/ferd-view.fxml"),
+    FERD("/is/vidmot/kvikmyndakistan-view.fxml"),
     FERDDIALOG("/is/vidmot/nyKvikmynd-dialog.fxml"),
-    FERDSPJALD ("/is/vidmot/ferdSpjald-view.fxml");
+    FERDSPJALD ("/is/vidmot/kvikmyndakistanSpjald-view.fxml");
 
 
     private String fileName;

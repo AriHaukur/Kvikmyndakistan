@@ -17,7 +17,7 @@ import java.io.IOException;
  *
  *
  *****************************************************************************/
-public class FerdSpjald extends GridPane {
+public class KvikmyndakistanSpjald extends GridPane {
 
     @FXML
     private TextField fxHeiti;
@@ -32,8 +32,8 @@ public class FerdSpjald extends GridPane {
     /**
      * Les inn .fxml skrá og setur controllerinn sem þessi hlutur
      */
-    public FerdSpjald() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/is/vidmot/ferdSpjald-view.fxml"));
+    public KvikmyndakistanSpjald() {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/is/vidmot/kvikmyndakistanSpjald-view.fxml"));
         fxmlLoader.setRoot(this);   // rótin á viðmótstrénu sett hér
         fxmlLoader.setController(this); // controllerinn settur hér en ekki í .fxml skránni
         try {

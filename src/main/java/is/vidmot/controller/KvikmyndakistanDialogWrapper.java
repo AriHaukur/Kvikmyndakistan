@@ -1,7 +1,7 @@
 package is.vidmot.controller;
 
 import is.vidmot.switcher.View;
-import is.vinnsla.Ferd;
+import is.vinnsla.Mynd;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
@@ -30,20 +30,20 @@ public class KvikmyndakistanDialogWrapper {
      * @param owner glugginn sem er eigandi
      * @return Ferd í Optional hlut
      */
-    public static Optional<Ferd> birtaDialog(Window owner)  {
+    public static Optional<Mynd> birtaDialog(Window owner)  {
         try {
             FXMLLoader loader = new FXMLLoader(
                     KvikmyndakistanDialogWrapper.class.getResource(View.FERDDIALOG.getFileName()));
 
             DialogPane pane = loader.load();
             KvikmyndakistanDialogController controller = loader.getController();
-            controller.setGogn (new Ferd());
-            Dialog<Ferd> dialog = new Dialog<>();
+            controller.setGogn (new Mynd());
+            Dialog<Mynd> dialog = new Dialog<>();
             dialog.setTitle(NY_FERD);
             dialog.initOwner(owner);
             dialog.setDialogPane(pane);
 
-            Callback<ButtonType, Ferd> ferdResultConverter = param -> {
+            Callback<ButtonType, Mynd> ferdResultConverter = param -> {
                 if (param.getButtonData() == ButtonBar.ButtonData.OK_DONE) {
                     return controller.getFerd().get();
                 } else {

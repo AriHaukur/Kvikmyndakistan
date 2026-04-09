@@ -19,11 +19,11 @@ import java.util.Scanner;
  *
  *
  *****************************************************************************/
-public class Ferdaplan {
+public class Kvikmyndakistan {
 
-    private final ObservableList<Ferd> ferdaListi = FXCollections.observableArrayList();
+    private final ObservableList<Mynd> ferdaListi = FXCollections.observableArrayList();
 
-    private SimpleObjectProperty<Ferd> valinFerd = new SimpleObjectProperty<>();
+    private SimpleObjectProperty<Mynd> valinFerd = new SimpleObjectProperty<>();
 
     private SimpleObjectProperty<Atburdur> sidastiAtburdur = new SimpleObjectProperty<>(Atburdur.SKODA);
 
@@ -39,13 +39,13 @@ public class Ferdaplan {
             Scanner scanner = new Scanner(is, StandardCharsets.UTF_8);
             while (scanner.hasNextLine()) {
                 String ferd = scanner.nextLine();
-                Ferd f = new Ferd(ferd);
+                Mynd f = new Mynd(ferd);
                 ferdaListi.add(f);
             }
         }
     }
 
-    public ObservableList<Ferd> getFerdaListi() {
+    public ObservableList<Mynd> getFerdaListi() {
         return ferdaListi;
     }
 
@@ -54,7 +54,7 @@ public class Ferdaplan {
      *
      * @param f ferðin sem er skoðuð
      */
-    public void skodaFerd(Ferd f) {
+    public void skodaFerd(Mynd f) {
         valinFerd.set(f);
         sidastiAtburdur.set(Atburdur.SKODA);
     }
@@ -64,7 +64,7 @@ public class Ferdaplan {
      *
      * @param f ferðin
      */
-    public void nyFerd(Ferd f) {
+    public void nyFerd(Mynd f) {
         ferdaListi.add(f);
         sidastiAtburdur.set(Atburdur.NY_FERD);
         valinFerd.set(f);
@@ -75,7 +75,7 @@ public class Ferdaplan {
      *
      * @param f ferðin
      */
-    public void eydaFerd(Ferd f) {
+    public void eydaFerd(Mynd f) {
         ferdaListi.remove(f);
         sidastiAtburdur.set(Atburdur.EYDA);
         valinFerd.set(f);
@@ -86,7 +86,7 @@ public class Ferdaplan {
      *
      * @param f ferðin
      */
-    public void veljaFerd(Ferd f) {
+    public void veljaFerd(Mynd f) {
         sidastiAtburdur.set(Atburdur.VELJA);
         valinFerd.set(f);
     }

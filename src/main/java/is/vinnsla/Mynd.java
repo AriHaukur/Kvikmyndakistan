@@ -9,7 +9,7 @@ import javafx.beans.property.SimpleStringProperty;
  *  og dagsetningu
  *
  *****************************************************************************/
-public class Ferd {
+public class Mynd {
     private SimpleStringProperty heiti = new SimpleStringProperty();
     private SimpleStringProperty afangastadur = new SimpleStringProperty();
     private SimpleStringProperty dagsetning = new SimpleStringProperty();
@@ -29,14 +29,14 @@ public class Ferd {
      * Smíðar ferðina sem lýst er í strengnum ferd með eiginleikum aðgreind með ;
      * @param ferd
      */
-    public Ferd(String ferd) {
+    public Mynd(String ferd) {
         String[] gogn = ferd.split(";");
         this.heiti.set(gogn[0]);
         this.afangastadur.set(gogn[1]);
         this.dagsetning.set(gogn[2]);
     }
 
-    public Ferd () {
+    public Mynd() {
 
     }
 

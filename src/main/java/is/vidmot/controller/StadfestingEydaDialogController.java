@@ -1,6 +1,6 @@
 package is.vidmot.controller;
 
-import is.vinnsla.Ferd;
+import is.vinnsla.Mynd;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
@@ -31,7 +31,7 @@ public class StadfestingEydaDialogController extends Dialog<ButtonType> {
         DialogPane p = fl.load ();
         setDialogPane (p);
     }
-    boolean birta (Ferd f) {
+    boolean birta (Mynd f) {
         fxHeiti.textProperty().bind(f.heitiProperty());
         Optional<ButtonType> result = showAndWait();
         return !result.isEmpty() && result.get().getButtonData() == ButtonBar.ButtonData.OK_DONE;
