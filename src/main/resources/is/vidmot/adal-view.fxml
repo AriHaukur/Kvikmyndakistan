@@ -23,13 +23,13 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <ListView fx:id="fxListiFerdir" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="fxListiFerdir1" prefHeight="200.0" prefWidth="200.0" />
       <Label fx:id="fxSkilabod" prefHeight="20.0" prefWidth="601.0" text="Umsagnir">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ListView fx:id="fxListiFerdir1" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="fxListiFerdir" prefHeight="200.0" prefWidth="200.0" />
       <ButtonBar prefHeight="40.0" prefWidth="200.0">
          <buttons>
             <Button mnemonicParsing="false" onAction="#onBaetaVid" text="Bæta við" />
