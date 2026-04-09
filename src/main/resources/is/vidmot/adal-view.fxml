@@ -8,28 +8,34 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.vidmot.controller.AdalController">
+<VBox alignment="CENTER" prefHeight="540.0" prefWidth="638.0" spacing="10.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.vidmot.controller.AdalController">
       <padding>
           <Insets bottom="10" left="10" right="10" top="10" />
       </padding>
       <children>
       <Label text="Kvikmyndakistan">
          <font>
-            <Font size="14.0" />
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="fxListar" prefHeight="20.0" prefWidth="601.0" text="Listar">
+         <font>
+            <Font size="18.0" />
          </font>
       </Label>
       <ListView fx:id="fxListiFerdir" prefHeight="200.0" prefWidth="200.0" />
-      <ButtonBar prefHeight="40.0" prefWidth="200.0">
-         <buttons>
-            <Button fx:id="fxSkoda" mnemonicParsing="false" onAction="#onSkoda" prefHeight="25.0" prefWidth="160.0" text="Skoða" />
-            <Button mnemonicParsing="false" onAction="#onBaetaVid" text="Bæta við" />
-            <Button fx:id="fxEyda" mnemonicParsing="false" onAction="#onEyda" text="Eyða" />
-         </buttons>
-      </ButtonBar>
-      <Label fx:id="fxSkilabod" text="Veldu ferð til að skoða eða eyða">
+      <Label fx:id="fxSkilabod" prefHeight="20.0" prefWidth="601.0" text="Umsagnir">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
       </Label>
+      <ListView fx:id="fxListiFerdir1" prefHeight="200.0" prefWidth="200.0" />
+      <ButtonBar prefHeight="40.0" prefWidth="200.0">
+         <buttons>
+            <Button mnemonicParsing="false" onAction="#onBaetaVid" text="Bæta við" />
+            <Button fx:id="fxEyda" mnemonicParsing="false" onAction="#onEyda" text="Eyða" />
+            <Button fx:id="fxSkoda" mnemonicParsing="false" onAction="#onSkoda" prefHeight="25.0" prefWidth="160.0" text="Skoða" />
+         </buttons>
+      </ButtonBar>
       </children>
   </VBox>
