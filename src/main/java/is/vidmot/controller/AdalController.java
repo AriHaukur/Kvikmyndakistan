@@ -46,6 +46,9 @@ public class AdalController {
     @FXML
     private Label fxSkilabod;
 
+    @FXML
+    private ListView<String> fxListiFerdir1;
+
     // vinnslan
     private Kvikmyndakistan kvikmyndakistan = new Kvikmyndakistan();
 
@@ -64,6 +67,9 @@ public class AdalController {
         tengjaSkodaEydaHnappa();
         tengjaAtburdVidSkilabod();
         tengjaValinFerd();
+
+        //Skrifar í listView til þess að geta smellt á.
+        fxListiFerdir1.getItems().addAll("Top Rated", "Popular", "Upcoming");
     }
 
     /**
@@ -132,16 +138,16 @@ public class AdalController {
                 kvikmyndakistan.eydaFerd(f);
             }
         }
-    }
+        }
 
-    /**
-     * Birtir ferðina í sama glugga
-     *
-     * @param event
-     */
-    @FXML
-    private void onSkoda(ActionEvent event) {
-        Mynd f = fxListiFerdir.getSelectionModel().getSelectedItem();
+        /**
+         * Birtir ferðina í sama glugga
+         *
+         * @param event
+         */
+        @FXML
+        private void onSkoda(ActionEvent event) {
+            Mynd f = fxListiFerdir.getSelectionModel().getSelectedItem();
         kvikmyndakistan.skodaFerd(f);
         if (f != null) {
             ViewSwitcher.switchTo(View.FERD, false, f);
