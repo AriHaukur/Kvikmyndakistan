@@ -13,12 +13,12 @@
           <Insets bottom="10" left="10" right="10" top="10" />
       </padding>
       <children>
-      <Label text="Ferðaplan">
+      <Label text="Kvikmyndakistan">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <ListView fx:id="fxListiFerdir"  prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="fxListiFerdir" prefHeight="200.0" prefWidth="200.0" />
       <ButtonBar prefHeight="40.0" prefWidth="200.0">
          <buttons>
             <Button fx:id="fxSkoda" mnemonicParsing="false" onAction="#onSkoda" prefHeight="25.0" prefWidth="160.0" text="Skoða" />
