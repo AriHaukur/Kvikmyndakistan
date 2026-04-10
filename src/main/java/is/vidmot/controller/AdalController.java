@@ -16,6 +16,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Optional;
 
+
 /******************************************************************************
  *  Nafn    : Ebba Þóra Hvananberg
  *  T-póstur:
@@ -70,6 +71,16 @@ public class AdalController {
 
         //Skrifar í listView til þess að geta smellt á.
         fxListiFerdir1.getItems().addAll("Top Rated", "Popular", "Upcoming");
+
+
+        //"Clearar" valdið, svo hægt er að velja mismunandi lista.
+        fxListiFerdir.getSelectionModel().selectedItemProperty().addListener((obs, gamla, nyja) -> {
+            if (nyja != null) fxListiFerdir1.getSelectionModel().clearSelection();
+        });
+
+        fxListiFerdir1.getSelectionModel().selectedItemProperty().addListener((obs, gamla, nyja) -> {
+            if (nyja != null) fxListiFerdir.getSelectionModel().clearSelection();
+        });
     }
 
     /**
@@ -87,7 +98,8 @@ public class AdalController {
         fxEyda.disableProperty().bind(
                 fxListiFerdir.getSelectionModel().selectedItemProperty().isNull());
         fxSkoda.disableProperty().bind(
-                fxListiFerdir.getSelectionModel().selectedItemProperty().isNull());
+                fxListiFerdir.getSelectionModel().selectedItemProperty().isNull().
+                        and(fxListiFerdir1.getSelectionModel().selectedItemProperty().isNull()));
     }
 
     /**
@@ -143,15 +155,23 @@ public class AdalController {
         /**
          * Birtir ferðina í sama glugga
          *
+         * Ari: Bætti við þannig að  þegar er ýtt á listann fyrir topp kvikmyndir
+         * þá er eyða takkin ekki virkur
          * @param event
          */
         @FXML
         private void onSkoda(ActionEvent event) {
-            Mynd f = fxListiFerdir.getSelectionModel().getSelectedItem();
-        kvikmyndakistan.skodaFerd(f);
-        if (f != null) {
-            ViewSwitcher.switchTo(View.FERD, false, f);
+           if(fxListiFerdir1.getSelectionModel().getSelectedItem() != null) {
+               String val = fxListiFerdir1.getSelectionModel().getSelectedItem();
+               ViewSwitcher.switchTo(View.KVIKMYNDA_LISTI, false, val);
+
+           } else if(fxListiFerdir.getSelectionModel().getSelectedItem() != null) {
+               Mynd f = fxListiFerdir.getSelectionModel().getSelectedItem();
+               kvikmyndakistan.skodaFerd(f);
+               ViewSwitcher.switchTo(View.FERD, false, f);
+           }
+
         }
     }
-}
+
 

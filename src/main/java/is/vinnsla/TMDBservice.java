@@ -7,6 +7,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -29,12 +30,15 @@ public class TMDBservice {
 
     //method til að sækja top Rated kvikmyndir
     public List<Movie> getTopRated() throws IOException, InterruptedException {
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://api.themoviedb.org/3/movie/top_rated?api_key=" + API_KEY))
-                .build();
-
-        HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
-        return parseMovies(response.body());
+        List<Movie> movies = new ArrayList<>();
+        for(int page = 1; page <= 5; page++) {
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create("https://api.themoviedb.org/3/movie/top_rated?api_key=" + API_KEY + "&page=" + page))
+                    .build();
+            HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+            movies.addAll(parseMovies(response.body()));
+        }
+        return movies;
     }
 
     public List<Movie> getUpcoming() throws IOException, InterruptedException {

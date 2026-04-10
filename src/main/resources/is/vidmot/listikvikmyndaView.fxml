@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="540.0" prefWidth="638.0" spacing="10.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.vidmot.controller.AdalController">
+<VBox alignment="CENTER" prefHeight="540.0" prefWidth="638.0" spacing="10.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.vidmot.controller.KvikmyndalistiController">
    <padding>
       <Insets bottom="10" left="10" right="10" top="10" />
    </padding>
@@ -23,10 +23,10 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <ListView fx:id="fxListiFerdir1" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="fxListiFerdir1" prefHeight="460.0" prefWidth="600.0" />
       <ButtonBar prefHeight="40.0" prefWidth="200.0">
          <buttons>
-            <Button mnemonicParsing="false" onAction="#onSkoda" prefHeight="25.0" prefWidth="160.0" text="Til baka" />
+            <Button mnemonicParsing="false" onAction="#onTilBaka" prefHeight="25.0" prefWidth="160.0" text="Til baka" />
             <Button fx:id="fxSkoda1" mnemonicParsing="false" onAction="#onSkoda" prefHeight="25.0" prefWidth="160.0" text="Skoða" />
          </buttons>
       </ButtonBar>

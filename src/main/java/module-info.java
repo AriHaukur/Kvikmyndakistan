@@ -12,6 +12,7 @@ module ModuleNafn {
     requires java.net.http;
     requires com.google.gson;
     opens is.vidmot to javafx.fxml;
+    opens is.vinnsla to com.google.gson;
 
     exports is.vidmot;
     exports is.vinnsla;

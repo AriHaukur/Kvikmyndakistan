@@ -9,7 +9,8 @@ public enum View {
     ADAL("/is/vidmot/adal-view.fxml"),
     FERD("/is/vidmot/kvikmyndakistan-view.fxml"),
     FERDDIALOG("/is/vidmot/nyKvikmynd-dialog.fxml"),
-    FERDSPJALD ("/is/vidmot/kvikmyndakistanSpjald-view.fxml");
+    FERDSPJALD ("/is/vidmot/kvikmyndakistanSpjald-view.fxml"),
+    KVIKMYNDA_LISTI ("/is/vidmot/listikvikmyndaView.fxml");
 
 
     private String fileName;

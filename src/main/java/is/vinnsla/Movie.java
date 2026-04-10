@@ -37,5 +37,15 @@ public class Movie {
         return overview;
     }
 
+    /**
+     * toString method til að setja fram titil, einkunn og útgáfudag
+     * Annars kemur upp bara location af kvikmyndinni s.s @1a23ff1
+     * @return
+     */
+    @Override
+    public String toString() {
+        return String.format("%s  (%.1f)  %s", title, vote_average, release_date);
+    }
+
 
 }
