@@ -28,7 +28,7 @@ public class KvikmyndalistiController implements GognInterface<String> {
     private void onSkoda(ActionEvent event) {
         Movie f = fxListiFerdir1.getSelectionModel().getSelectedItem();
         if (f != null) {
-            ViewSwitcher.switchTo(View.FERD, false, f);
+            ViewSwitcher.switchTo(View.SKODA_KVIKMYND, false, f);
         }
     }
 
@@ -43,16 +43,20 @@ public class KvikmyndalistiController implements GognInterface<String> {
      */
     @Override
     public void setGogn(String category) {
+        if(category == null) return;
         TMDBservice service = new TMDBservice();
         Thread t = new Thread(() -> {
             try {
                 List<Movie> movies = switch (category) {
                     case "Top Rated" -> service.getTopRated();
-                    case "Popular" -> service.getUpcoming();
-                    case "Upcoming" -> service.getPopularMovies();
+                    case "Popular" -> service.getPopularMovies();
+                    case "Upcoming" -> service.getUpcoming();
                     default -> service.getTopRated();
                 };
-                Platform.runLater(() -> fxListiFerdir1.getItems().addAll(movies));
+                Platform.runLater(() -> {
+                    fxListiFerdir1.getItems().clear();
+                    fxListiFerdir1.getItems().addAll(movies);
+                });
             } catch (Exception e) {
                 e.printStackTrace();
             }

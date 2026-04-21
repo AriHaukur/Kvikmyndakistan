@@ -73,7 +73,7 @@ public class AdalController {
         fxListiFerdir1.getItems().addAll("Top Rated", "Popular", "Upcoming");
 
 
-        //"Clearar" valdið, svo hægt er að velja mismunandi lista.
+        //"Clearar" valdi&eth;, svo h&aelig;gt er a&eth; velja mismunandi lista.
         fxListiFerdir.getSelectionModel().selectedItemProperty().addListener((obs, gamla, nyja) -> {
             if (nyja != null) fxListiFerdir1.getSelectionModel().clearSelection();
         });
@@ -163,12 +163,12 @@ public class AdalController {
         private void onSkoda(ActionEvent event) {
            if(fxListiFerdir1.getSelectionModel().getSelectedItem() != null) {
                String val = fxListiFerdir1.getSelectionModel().getSelectedItem();
-               ViewSwitcher.switchTo(View.KVIKMYNDA_LISTI, false, val);
+               ViewSwitcher.switchTo(View.KVIKMYNDA_LISTI, true, val);
 
            } else if(fxListiFerdir.getSelectionModel().getSelectedItem() != null) {
                Mynd f = fxListiFerdir.getSelectionModel().getSelectedItem();
                kvikmyndakistan.skodaFerd(f);
-               ViewSwitcher.switchTo(View.FERD, false, f);
+               ViewSwitcher.switchTo(View.FERD, true, f);
            }
 
         }
