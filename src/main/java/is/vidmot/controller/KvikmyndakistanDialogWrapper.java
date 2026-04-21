@@ -24,7 +24,7 @@ import java.util.Optional;
  *****************************************************************************/
 public class KvikmyndakistanDialogWrapper {
 
-    private static final String NY_FERD = "Ný ferð";
+    private static final String NY_FERD = "Bæta við mynd";
     /**
      * Birtir dialog og skilar Ferd
      * @param owner glugginn sem er eigandi
